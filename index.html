@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="assets/img/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>8-Ball</title>
+    <style>
+      /* Main */
+      @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amatic+SC:wght@400;700&family=Antonio:wght@100&family=Macondo&family=Merriweather:ital@0;1&family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;1,700&family=Work+Sans:wght@400;500;800&display=swap');
+      * {
+        font-family: 'Press Start 2P';
+      }
+      /* General */
+      body {
+        background-color: gray;
+      }
+      h1 {
+        text-transform: uppercase;
+      }
+      h2 {
+        text-transform: capitalize;
+      }
+      textarea {
+        text-align: center;
+      }
+      /* Button */
+      .button {
+        margin-top: 0.625rem;
+        padding: 0.938rem 1.563rem;
+        font-size: 0.875rem;
+        cursor: pointer;
+        text-decoration: none;
+        outline: none;
+        color: rgb(0, 0, 0);
+        background-color: #ffffff;
+        border: none;
+        border-radius: 0.938rem;
+        box-shadow: 0 0.563rem #999;
+        margin-bottom: 0.625rem;
+      }
+      .button:hover {
+        background-color: #ffffff;
+      }
+      .button:active {
+        background-color: #ffffff;
+        box-shadow: 0 0.313rem #666;
+        transform: translateY(0.25rem);
+      }
+      /* Main */
+      #content {
+        background-color: black;
+        color: white;
+        width: 35rem;
+        margin: auto;
+        padding: 0.1rem;
+        text-align: center;
+        border-radius: 1.563rem;
+      }
+      #eightBall {
+        width: 21.875rem;
+        height: 21.875rem;
+        background-color: white;
+        color: black;
+        margin: auto;
+        border-radius: 100%;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.625rem;
+        margin-bottom: 1rem;
+      }
+      #answer {
+        font-size: 1.563rem;
+        margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main -->
+    <main>
+      <div id="content">
+        <h1>Eightball</h1>
+        <h2>Type your question below</h2>
+        <textarea name="question" id="question" cols="30" rows="3"></textarea
+        ><br />
+        <button type="button" class="button" onclick="myFunction()">
+          Shake!
+        </button>
+        <div id="eightBall">
+          <p id="answer">Ask me anything!</p>
+        </div>
+      </div>
+    </main>
+    <!-- Main End -->
+    <!-- JS -->
+    <script>
+      // Function
+      function myFunction() {
+        // Generating a number
+        let randomNumber = Math.floor(Math.random() * 8);
+        // Possible results
+        if (randomNumber === 0) {
+          answer = 'It is certain';
+        } else if (randomNumber == 1) {
+          answer = 'It is decidedly so';
+        } else if (randomNumber == 2) {
+          answer = 'Reply hazy try again';
+        } else if (randomNumber == 3) {
+          answer = 'Cannot predict now';
+        } else if (randomNumber == 4) {
+          answer = 'Do not count on it';
+        } else if (randomNumber == 5) {
+          answer = 'My source say no';
+        } else if (randomNumber == 6) {
+          answer = 'Outlook not so good';
+        } else if (randomNumber == 7) {
+          answer = 'Signs to point yes';
+        }
+        document.getElementById('answer').innerHTML = answer;
+      }
+    </script>
+    <!-- JS End-->
+  </body>
+</html>
